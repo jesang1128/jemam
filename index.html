@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Jesang</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('3a548625cfdf4b67bdb86a3c0f7cfbb5');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '상담목회 아카데미 예맘',
+        description: '신입생을 모집합니다.',
+        imageUrl:
+          'https://jemam.org/wp-content/uploads/2022/08/%E1%84%89%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B7%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5-%E1%84%8B%E1%85%A8%E1%84%86%E1%85%A1%E1%86%B7%E1%84%8B%E1%85%AF%E1%86%AB-%E1%84%92%E1%85%B4%E1%86%AB%E1%84%87%E1%85%A2%E1%84%80%E1%85%A7%E1%86%BC-%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%AE_%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A6-150x150.png',
+        link: {
+          mobileWebUrl: 'https://www.jemam.org',
+          webUrl: 'https://www.jemam.org',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '자세히 알아 보기',
+          link: {
+            mobileWebUrl: 'https://www.jemam.org',
+            webUrl: 'https://www.jemam.org',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
